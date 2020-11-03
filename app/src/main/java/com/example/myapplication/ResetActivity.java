@@ -1,0 +1,68 @@
+package com.example.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.myapplication.base.BaseActivity;
+import com.example.myapplication.base.BaseFragment;
+import com.example.myapplication.base.MyApplication;
+import com.example.myapplication.bean.UserInfoBean;
+import com.example.myapplication.util.StrUtil;
+import com.example.myapplication.util.ToastUtil;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.internal.Utils;
+
+public class ResetActivity extends BaseActivity {
+
+    @BindView(R.id.tv_phone)
+    TextView tv_phone;
+    @BindView(R.id.et_pwd)
+    EditText et_pwd;
+    @BindView(R.id.tv_login)
+    TextView tv_login;
+
+    @Override
+    protected void setContent() {
+        super.setContent();
+        setContentView(R.layout.activity_reset);
+        ButterKnife.bind(this);
+
+    }
+    @Override
+    protected void initData() {
+        tv_phone.setText(MyApplication.curUser);
+    }
+
+    @Override
+    protected void initListener() {
+        tv_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String temp = et_pwd.getText().toString().trim();
+                if (StrUtil.isEmpty(temp)){
+                    ToastUtil.showToast(myActivity,"新密码不能为空");
+                    return;
+                }
+                List<UserInfoBean> list = DataSupport.where("name = " + MyApplication.curUser ).find(UserInfoBean.class);
+                UserInfoBean s= list.get(0);
+                s.setPwd(temp);
+                s.save();
+                if (s.isSaved()){
+                    ToastUtil.showToast(myActivity,"新密码设置成功");
+                    finish();
+                }
+            }
+        });
+    }
+}
