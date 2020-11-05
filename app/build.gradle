@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
+    lintOptions {
+        abortOnError false
+    }
 //    buildTypes {
 //
 //        release {
@@ -21,7 +24,6 @@ android {
 //            zipAlignEnabled false
 //        }
 //    }
-
     //noinspection GradleCompatible
     compileSdkVersion 29
     buildToolsVersion "29.0.2"

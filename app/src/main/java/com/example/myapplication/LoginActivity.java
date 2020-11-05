@@ -5,9 +5,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.fragment.app.Fragment;
-
 import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.base.GlobalData;
 import com.example.myapplication.base.MyApplication;
@@ -15,11 +12,8 @@ import com.example.myapplication.util.SharedPreUtils;
 import com.example.myapplication.util.StrUtil;
 import com.example.myapplication.util.ToastUtil;
 import com.example.myapplication.bean.UserInfoBean;
-
 import org.litepal.crud.DataSupport;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -35,14 +29,11 @@ public class LoginActivity extends BaseActivity {
     @BindView(R.id.iv_right_err)
     ImageView iv_right_err;
 
-    private Fragment fragment0, fragment1;
-
     @Override
     protected void setContent() {
         super.setContent();
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
     }
 
     @Override
@@ -91,15 +82,12 @@ public class LoginActivity extends BaseActivity {
                     ToastUtil.showToast(myActivity, "手机号或密码不能为空");
                     return;
                 }
+
                 if (tempPhone.length() != 11) {
                     ToastUtil.showToast(myActivity, "手机号错误");
                     return;
                 }
-                //  List<UserInfoBean> list = DataSupport.where("name = " + tempPhone + " and " + "pwd = " + tempPwd).find(UserInfoBean.class);//查询表Comment
-//                if (list.size() == 0) {
-//                    ToastUtil.showToast(myActivity, "手机号或密码错误");
-//                    return;
-//                }
+
                 List<UserInfoBean> list = DataSupport.findAll(UserInfoBean.class);
                 for (int i = 0; i < list.size(); i++) {
                     if (list.get(i).getName().equals(tempPhone) && list.get(i).getPwd().equals(tempPwd)) {

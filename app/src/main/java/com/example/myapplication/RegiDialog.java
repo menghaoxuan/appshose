@@ -21,9 +21,6 @@ public class RegiDialog extends BaseDialog {
 
     TextView  tv_commit, tv_cannal;
     EditText et_phone, et_pwd;
-    int myTag;//标记
-    String content;
-
     public RegiDialog(Activity activity) {
         super(activity);
 

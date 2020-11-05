@@ -1,32 +1,24 @@
 package com.example.myapplication;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.example.myapplication.base.BaseFragment;
 import com.example.myapplication.base.BaseRecyclerAdapter;
-
 import com.example.myapplication.base.MyApplication;
 import com.example.myapplication.base.MyRVViewHolder;
 import com.example.myapplication.bean.GoodsBean;
 import com.example.myapplication.bean.GoodsBeanMy;
 import com.example.myapplication.util.DateUtil;
-
 import com.example.myapplication.util.ToastUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,11 +128,7 @@ public class HomeFragment extends BaseFragment {
 
         private TextView tv_list_item, tv_1, tv_2, tv_3, tv_price, tv_add;
         private ImageView imgv_list;
-        private int selPosi;
 
-        public void setSelPosi(int selPosi) {
-            this.selPosi = selPosi;
-        }
 
         public MyAdapter(Context context, List<GoodsBean> datas, int layoutId) {
             super(context, datas, layoutId);

@@ -38,6 +38,8 @@ public class MainActivity extends BaseActivity {
         super.setContent();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        View v = findViewById(R.id.forever2);//找到你要设透明背景的layout 的id
+        v.getBackground().setAlpha(150);
 
     }
 
@@ -64,8 +66,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void DisplayFragment(int position) {
-//        myAdapter.setSelPosi(position);
-//        myAdapter.notifyDataSetChanged();
+
         switch (position) {
 
             case 0:
