@@ -1,27 +1,17 @@
 package com.example.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.example.myapplication.base.BaseActivity;
-import com.example.myapplication.base.BaseFragment;
 import com.example.myapplication.base.MyApplication;
 import com.example.myapplication.bean.UserInfoBean;
 import com.example.myapplication.util.StrUtil;
 import com.example.myapplication.util.ToastUtil;
-
 import org.litepal.crud.DataSupport;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.internal.Utils;
+
 
 public class ResetActivity extends BaseActivity {
 

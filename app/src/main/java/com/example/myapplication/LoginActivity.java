@@ -38,6 +38,10 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        /**
+         * 此判断网络信息功能为从网上找到使用。
+         */
+
         int temp = (int) SharedPreUtils.get(myContext, GlobalData.sp_key_1, 0);
         String temp2 = (String) SharedPreUtils.get(myContext, GlobalData.sp_key_2, "");
         String temp3 = (String) SharedPreUtils.get(myContext, GlobalData.sp_key_3, "");

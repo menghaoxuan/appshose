@@ -5,9 +5,6 @@
     <list>
         <mapping class="com.example.myapplication.bean.UserInfoBean"></mapping>
         <mapping class="com.example.myapplication.bean.GoodsBeanMy"></mapping>
-
-        <!--添加其他表-->
-<!--        <mapping class="com.example.meiyelauncher.bean.db.FingerUserInfo"></mapping>-->
     </list>
 </litepal>
     <!--

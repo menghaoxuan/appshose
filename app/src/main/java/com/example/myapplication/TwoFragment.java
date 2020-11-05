@@ -9,31 +9,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.myapplication.base.BaseFragment;
 import com.example.myapplication.base.BaseRecyclerAdapter;
 import com.example.myapplication.base.MyApplication;
 import com.example.myapplication.base.MyRVViewHolder;
-import com.example.myapplication.bean.GoodsBean;
 import com.example.myapplication.bean.GoodsBeanMy;
 import com.example.myapplication.bean.EventBus_Tag;
-import com.example.myapplication.util.DateUtil;
 import com.example.myapplication.util.ToastUtil;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.litepal.crud.DataSupport;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

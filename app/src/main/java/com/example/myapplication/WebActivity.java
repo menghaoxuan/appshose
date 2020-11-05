@@ -49,7 +49,9 @@ public class WebActivity extends BaseActivity {
         context.startActivity(starter);
     }
 
-
+    /**
+     * 此跳转至网页信息界面为从网上找到使用。
+     */
 
     @Override
     protected void setContent() {
@@ -118,14 +120,6 @@ public class WebActivity extends BaseActivity {
             //方法中的onProgressChanged就代表了其速度
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
-//                //首先我们的进度条是隐藏的
-//                pbLoading.setVisibility(View.VISIBLE);
-//                //把网页加载的进度传给我们的进度条
-//                pbLoading.setProgress(newProgress);
-//                if (newProgress == 100) {
-//                    //加载完毕让进度条消失
-//                    pbLoading.setVisibility(View.GONE);
-//                }
                 super.onProgressChanged(view, newProgress);
             }
         });
@@ -150,12 +144,4 @@ public class WebActivity extends BaseActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-
-
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-//    }
 }
